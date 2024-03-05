@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Header(){
-    return(
+export default function Header() {
+    return (
         <nav className="flex items-center justify- flex-wrap bg-teal-500 p-6 ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <span className="font-semibold text-xl tracking-tight">ArtlleryHub</span>
@@ -12,9 +12,9 @@ export default function Header(){
                     <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">Category</a>
                     <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">About</a>
                 </div>
-                <div className="mb-1 flex items-center">
+                <div className="mb-1 flex items-center mr-4">
                     <div className="relative w-64">
-                        <input className="block w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md leading-5 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-300 sm:text-sm mr-4"
+                        <input className="block w-full pl-9 pr-4 py-2 border border-gray-200 rounded-md leading-8 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-300 sm:text-sm"
                             placeholder="Buscar pintura, escultura y más..." type="search" name="search">
                         </input>
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -24,8 +24,12 @@ export default function Header(){
                         </div>
                     </div>
                 </div>
-                <button className="bg-white hover:bg-gray-100 text-neutral-500 font-semibold py-2 px-4 rounded ml-4">Login</button>
-                <button className="bg-white hover:bg-gray-100 text-neutral-500 font-semibold py-2 px-4 rounded ml-4">Sign In</button>
+                <button className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Login</button>
+                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
+                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-teal-500 rounded-md group-hover:bg-opacity-0">
+                        Sign In
+                    </span>
+                </button>
             </div>
         </nav>
     );

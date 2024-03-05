@@ -52,13 +52,6 @@ const CarruselPrincipal = () => {
                 price: '$99',
                 image: 'https://via.placeholder.com/150'
             },
-            {
-                id: 7,
-                title: 'Visión futurista',
-                type: 'Arte digital',
-                price: '$99',
-                image: 'https://via.placeholder.com/150'
-            },
         ];
         setProducts(items);
     }, []);
@@ -85,14 +78,14 @@ const CarruselPrincipal = () => {
                 <button className="focus:outline-none" onClick={() => scrollTo(-containerWidth)}>
                     <AiOutlineLeft />
                 </button>
-                <div ref={carouselRef} className="flex space-x-4" style={{ scrollBehavior: 'smooth', scrollLeft: scrollPosition }}>
+                <div ref={carouselRef} className="flex space-x-10" style={{ scrollBehavior: 'smooth', scrollLeft: scrollPosition }}>
                     {products.map((product) => (
                         <div key={product.id} className="flex flex-col items-center shadow-lg rounded-2xl" style={{ backgroundColor: '#F9F7F3' }}>
                             <img src={product.image} alt={product.title} className="w-40 h-40 object-cover rounded-3xl mb-4" />
                             <p className="text-lg font-bold mb-2">{product.title}</p>
                             <p className="text-gray-500 mb-4">{product.type}</p>
                             <p className="text-xl font-bold mb-4">{product.price}</p>
-                            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-2 rounded-xl">
+                            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-xl">
                                 Comprar
                             </button>
                         </div>

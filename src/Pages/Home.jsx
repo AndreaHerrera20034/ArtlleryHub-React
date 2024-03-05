@@ -16,9 +16,9 @@ const Home = () => {
     <div style={{ backgroundColor: '#E8E8E8' }}>
       <Header />
       <HeroSection />
-      
+      <br />
       <CategoryCard />
-      
+      <br />
       <CarruselPrincipal />
       <Card />
       <CarouselPinturas />

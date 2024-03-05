@@ -47,13 +47,6 @@ const CarouselPinturas = () => {
             type: 'Arte digital',
             price: '$99',
             image: 'https://via.placeholder.com/150'
-        },
-        {
-            id: 7,
-            title: 'Visión futurista',
-            type: 'Arte digital',
-            price: '$99',
-            image: 'https://via.placeholder.com/150'
         }
       ];
 
@@ -83,14 +76,14 @@ const CarouselPinturas = () => {
                 <button className="focus:outline-none" onClick={() => scrollTo(-containerWidth)}>
                     <AiOutlineLeft />
                 </button>
-                <div ref={carouselRef} className="flex space-x-4" style={{ scrollBehavior: 'smooth', scrollLeft: scrollPosition }}>
+                <div ref={carouselRef} className="flex space-x-10" style={{ scrollBehavior: 'smooth', scrollLeft: scrollPosition }}>
                     {items.map((item) => (
                         <div key={item.id} className="flex flex-col items-center rounded-2xl" style={{ backgroundColor: '#F9F7F3' }}>
                             <img src={item.image} alt={item.title} className="w-40 h-40 object-cover rounded-3xl mb-4" />
                             <p className="text-lg font-bold mb-2">{item.title}</p>
                             <p className="text-gray-500 mb-4">{item.type}</p>
                             <p className="text-xl font-bold mb-4">{item.price}</p>
-                            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-2 rounded-xl">
+                            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-xl">
                                 Comprar
                             </button>
                         </div>

@@ -3,7 +3,7 @@ import React from "react";
 const Card = () => {
     return (
         <div className="flex justify-center items-center h-screen">
-            <div className="container mx-auto md:px-12 lg:py-0 lg:px-0 rounded-3xl" style={{ backgroundColor: '#F9F7F3' }}>
+            <div className="container mx-auto md:px-12 shadow-lg lg:py-0 lg:px-0 rounded-3xl" style={{ backgroundColor: '#F9F7F3' }}>
                 <div className="flex flex-col lg:flex-row items-start">
                     <div className="p-6 lg:w-1/2 lg:px-8 lg:py-12">
                         <h2 className="text-2xl font-bold mb-4">Discover the art of your choice!</h2>

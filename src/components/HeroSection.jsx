@@ -13,7 +13,7 @@ export default function HeroSection() {
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloribus laboriosam libero veritatis id in ducimus reprehenderit deserunt debitis repellendus architecto voluptas recusandae, accusamus voluptatum rerum tempora optio excepturi. Nulla.
                         </p>
                         <form className="w-full mt-12">
-                            <button className="ml-auto py-3 px-6 rounded text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12">
+                            <button className="ml-auto py-3 px-6 rounded-2xl text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12">
                                 <span className="hidden text-yellow-900 font-semibold md:block">
                                     Unirse
                                 </span>
