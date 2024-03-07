@@ -8,8 +8,8 @@ import Card from "../components/Card";
 import CarouselPinturas from "../components/Carruseles/CarruselPinturas";
 import CarouselEscultura from "../components/Carruseles/CarruselEscul";
 import CarouselFoto from "../components/Carruseles/CarruselFoto";
-import Footer from "../components/Footer";
 import CarouselDigital from "../components/Carruseles/CarruselDigital";
+import Footer from "../components/footer";
 
 const Home = () => {
   return <>
@@ -30,7 +30,7 @@ const Home = () => {
       <br />
       <CarouselFoto />
       <br />
-      <Footer />
+      <Footer></Footer>
     </div>
 </>
 } 
