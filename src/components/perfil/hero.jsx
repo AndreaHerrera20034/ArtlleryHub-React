@@ -50,27 +50,13 @@ const hero = () => {
           {/* ---- img de esa wea-----*/}
           <div className="basis-1/3 mt-10 sm:mt-0">
             <figure className="flex items-center justify-center">
-              {/* <img
-                className="w-30h-30 rounded-full mr-4"
+              <img
+                className="rounded w-36 h-36"
                 src="https://www.freeiconspng.com/thumbs/pikachu-transparent/pikachu-png-transparent-0.png"
-                alt="Avatar of Jonathan Reinink"
-              /> */}
+                alt="Extra large avatar"
+              />
             </figure>
           </div>
-          <div
-            id="tooltip-jese"
-            role="tooltip"
-            className="absolute z-10 invisible inline-block border-black px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-          >
-            Jese Leos
-            <div className="tooltip-arrow border-black" data-popper-arrow></div>
-          </div>
-          <img
-            data-tooltip-target="tooltip-jese"
-            className="w-50 h-50 rounded border-black"
-            src="https://www.freeiconspng.com/thumbs/pikachu-transparent/pikachu-png-transparent-0.png"
-            alt="Medium avatar"
-          ></img>
 
           {/* ---- img de esa wea final-----*/}
           {/*content right*/}
