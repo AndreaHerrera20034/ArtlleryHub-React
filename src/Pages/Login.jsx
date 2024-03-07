@@ -38,7 +38,7 @@ const Login = () => {
     <div className='relative w-full h-screen bg-zinc-900/90'>
       <img className='absolute w-full h-full object-cover mix-blend-overlay ' src={loginImg} alt="/" />
       <div className="flex justify-center items-center h-full">
-        <form onSubmit={handleSubmit} className="max-w-[450px]   w-full  mx-auto  bg-white  p-8  opacity-90">
+        <form onSubmit={handleSubmit} className="rounded-lg max-w-[450px]   w-full  mx-auto  bg-white  p-8  opacity-90">
           <h1 className="text-4xl font-bold  text-gray-900 text-center py-8 ">Login</h1>
 
           <div className="flex flex-col  mb-4">
@@ -68,7 +68,7 @@ const Login = () => {
 
           <p className="mt-10 text-center text-5sm text-gray-500">
             ¿No tienes una cuenta?{' '}
-            <a href="#" className="font-semibold leading-6 text-red-600 hover:text-orange-500">
+            <a href="/Register" className="font-semibold leading-6 text-red-600 hover:text-orange-500">
               Regístrate
             </a>
           </p>

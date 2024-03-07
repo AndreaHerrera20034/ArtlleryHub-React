@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import Register from './Pages/register'
 import ShoppingCart from './Pages/ShoppingCart'
 import HomeAdmin from './Pages/HomeAdmin'
+import Sell from './Pages/Sell'
 
 
 function App() {
@@ -14,11 +15,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login />}></Route> 
+          <Route path='/Login' element={<Login />}></Route> 
           <Route path='/Home' element={<Home />}></Route>
           <Route path='/Register' element={<Register />}></Route>
-          <Route path='/ShoppingCart' element={<ShoppingCart />}></Route>
+          <Route path='/' element={<ShoppingCart />}></Route>
           <Route path='/HomeAdmin' element={<HomeAdmin />}></Route>
+          <Route path='/Sell' element={<Sell></Sell>}></Route>
         </Routes>
       </BrowserRouter>
     </>
