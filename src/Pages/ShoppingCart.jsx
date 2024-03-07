@@ -140,7 +140,7 @@ const ShoppingCart = () => {
             );
           })}
           <Link
-            to={'/Home'}
+            to={'/'}
             className='flex font-semibold text-indigo-600 text-sm mt-10'
           >
             <svg
