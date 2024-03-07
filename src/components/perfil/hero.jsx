@@ -1,5 +1,3 @@
-import { AiOutlineGithub } from "react-icons/ai";
-
 const hero = () => {
   return (
     <section className="pt-0" id="about">
@@ -12,14 +10,14 @@ const hero = () => {
               data-aos-duration="1500"
               className="text-headingColor font-[600] text-[16px]"
             >
-              Hola bienvenidos
+              Hola bienvenido:
             </h5>
             <h1
               data-aos="fade-up"
               data-aos-duration="1500"
               className="text-headingColor font-[800] text-[1.8rem] sm:text-[4opx] leading-[35px] sm:leading-[46px] mt-5 "
             >
-              mi nombre es artyllery <br /> Artista y Escultor
+              ArtylleryHuB
             </h1>
 
             <div
@@ -28,11 +26,13 @@ const hero = () => {
               data-aos-delay="200"
               className="flex items-center gap-6 mt-7"
             >
-              <a
-                href="#portafolio"
-                className=" text-smallTextColor font-[600] text-[16px] border-b border-solid"
-              >
-                mira mis trabajos xd?
+              <a className=" text-smallTextColor font-[600] text-[16px] border-b border-solid">
+                Artyllery@gmail.com
+              </a>
+              <br />
+              <br />{" "}
+              <a className=" text-smallTextColor font-[600] text-[16px] border-b border-solid">
+                Usuario: <br /> Artillery
               </a>
             </div>
             <p
@@ -44,52 +44,34 @@ const hero = () => {
               <span className="">
                 <i className="ri-apps-2-fill"></i>
               </span>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis
-              asperiores quos ipsum soluta. Id, incidunt officia porro
-              cupiditate optio possimus, voluptates distinctio rerum ipsam
-              deleniti iste. Dolorem, amet deleniti? Deleniti?
             </p>
-            <div className="flex items-center gap-9 mt-14">
-              <span className="text-smallTextColor text-[15px] font-[600]">
-                sigueme C:
-              </span>
-              {/* EL DE SEGUIR O FOLLOW? CUENTAS RANDOM?*/}
-              <span>
-                <a
-                  href="#yo"
-                  className="text-smallTextColor text-[22px] font-[600]"
-                >
-                  <AiOutlineGithub />
-                </a>
-              </span>
-              <span>
-                <a
-                  href="#yo"
-                  className="text-smallTextColor text-[22px] font-[600]"
-                >
-                  <i className="ri-github-fill"></i>
-                </a>
-              </span>
-              <span>
-                <a
-                  href="#yo"
-                  className="text-smallTextColor text-[22px] font-[600]"
-                >
-                  <i className="ri-facebook-fill"></i>
-                </a>
-              </span>
-            </div>
           </div>
           {/* ---- lef fin-----*/}
           {/* ---- img de esa wea-----*/}
           <div className="basis-1/3 mt-10 sm:mt-0">
             <figure className="flex items-center justify-center">
-              <img
+              {/* <img
+                className="w-30h-30 rounded-full mr-4"
                 src="https://www.freeiconspng.com/thumbs/pikachu-transparent/pikachu-png-transparent-0.png"
-                alt=""
-              />
+                alt="Avatar of Jonathan Reinink"
+              /> */}
             </figure>
           </div>
+          <div
+            id="tooltip-jese"
+            role="tooltip"
+            className="absolute z-10 invisible inline-block border-black px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+          >
+            Jese Leos
+            <div className="tooltip-arrow border-black" data-popper-arrow></div>
+          </div>
+          <img
+            data-tooltip-target="tooltip-jese"
+            className="w-50 h-50 rounded border-black"
+            src="https://www.freeiconspng.com/thumbs/pikachu-transparent/pikachu-png-transparent-0.png"
+            alt="Medium avatar"
+          ></img>
+
           {/* ---- img de esa wea final-----*/}
           {/*content right*/}
 

@@ -4,13 +4,13 @@ const portafolio = () => {
       <div className="container">
         <div className="flex items-center justify-between flex-wrap">
           <div className="mb-7 sm:m-0">
-            <h3 className="text-red-400"> Mis recientes trabajos </h3>
+            <h3 className="text-black-400"> Obras</h3>
           </div>
           <div className="flex gap-3">
-            <button className="text-blue-300 border border-solid border-black-500 py-2 px-4 rounded-[8px]">
+            <button className="text-blue-800 border border-solid border-black py-2 px-4 rounded-[8px]">
               Favoritos
             </button>
-            <button className="text-blue-300 border border-solid border-black-500 py-2 px-4 rounded-[8px]">
+            <button className="text-blue-800 border border-solid border-black py-2 px-4 rounded-[8px]">
               obras publicadas
             </button>
           </div>
