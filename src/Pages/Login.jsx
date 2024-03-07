@@ -39,7 +39,7 @@ const Login = () => {
       <img className='absolute w-full h-full object-cover mix-blend-overlay ' src={loginImg} alt="/" />
       <div className="flex justify-center items-center h-full">
         <form onSubmit={handleSubmit} className="rounded-lg max-w-[450px]   w-full  mx-auto  bg-white  p-8  opacity-90">
-          <h1 className="text-4xl font-bold  text-gray-900 text-center py-8 ">Login</h1>
+          <h1 className="text-4xl font-bold  text-gray-900 text-center py-8 ">Logiiiiiin</h1>
 
           <div className="flex flex-col  mb-4">
             <label className="block text-5sm font-medium leading-6 text-gray-900 py-2 ">Correo</label>
