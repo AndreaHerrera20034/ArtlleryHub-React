@@ -1,3 +1,4 @@
+import { AiOutlineGithub } from "react-icons/ai";
 import CountUp from "react-countup";
 
 const hero = () => {
@@ -28,14 +29,6 @@ const hero = () => {
               data-aos-delay="200"
               className="flex items-center gap-6 mt-7"
             >
-              <a href="#contact">
-                <button
-                  className="bg-primaryColor text-white font-[500] flex items-center gap-2 hover:bg-smallTextColor 
-                      ease-in duration-300 py-2 px-4 rounded-[80px]"
-                >
-                  <i className="ri-mail-send-line"> contactame</i>
-                </button>
-              </a>
               <a
                 href="#portafolio"
                 className=" text-smallTextColor font-[600] text-[16px] border-b border-solid"
@@ -67,7 +60,7 @@ const hero = () => {
                   href="#yo"
                   className="text-smallTextColor text-[22px] font-[600]"
                 >
-                  <i className="ri-youtube-line"></i>
+                  <AiOutlineGithub />
                 </a>
               </span>
               <span>
@@ -100,43 +93,7 @@ const hero = () => {
           </div>
           {/* ---- img de esa wea final-----*/}
           {/*content right*/}
-          <div
-            className="md:basis-1/5 flex justify-bertween text-center mt-10 flex-wrap gap-3 md:mt-0
-            md:flex-col md:justify-end md:text-end "
-          >
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={6} duration={2} suffix="+" />
-              </h2>
-              <h4 className="text-headingColor font-[500] text-[18px]">
-                años de experencia
-              </h4>
-            </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={100} duration={2} suffix="%" />
-              </h2>
-              <h4 className="text-headingColor font-[500] text-[18px]">
-                Tasa de ventas
-              </h4>
-            </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={150} duration={2} suffix="+" />
-              </h2>
-              <h4 className="text-headingColor font-[500] text-[18px]">
-                Clientes satisfechos
-              </h4>
-            </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-[700] text-[32px]">
-                <CountUp start={0} end={60} duration={2} suffix="+" />
-              </h2>
-              <h4 className="text-headingColor font-[500] text-[18px]">
-                Peticiones echas
-              </h4>
-            </div>
-          </div>
+
           {/*final del content*/}
         </div>
       </div>
