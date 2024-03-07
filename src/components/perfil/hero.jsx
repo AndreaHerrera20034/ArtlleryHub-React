@@ -1,5 +1,4 @@
 import { AiOutlineGithub } from "react-icons/ai";
-import CountUp from "react-countup";
 
 const hero = () => {
   return (
