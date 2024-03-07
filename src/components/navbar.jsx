@@ -1,4 +1,5 @@
 import { CgShoppingCart } from 'react-icons/cg'
+import { IoPersonCircleSharp } from "react-icons/io5";
 import cartData from '../utils/cartData';
 import React, { useEffect, useState } from 'react';
 
@@ -12,9 +13,7 @@ export default function Header() {
             </div>
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div className="text-sm lg:flex-grow">
-                    <a href="/Home" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">Home</a>
-                    <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">Category</a>
-                    <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">About</a>
+                    <a href="/" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">Home</a>
                     <a href="/Sell" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4">Vender</a>
                 </div>
                 <div className="mb-1 flex items-center">
@@ -29,12 +28,19 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <a href="/" className='block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4'>
-                    <span className='relative inline-block pl-5'>
-                        <CgShoppingCart className="inline-block text-3xl" />
-                        <span style={{ fontSize: '10px' }} className='absolute bottom-5 left-9 bg-purple-800 text-white w-5 h-5 flex items-center justify-center rounded-full'>{carts?.length} </span>
-                    </span>
-                </a>
+                <div>
+                    <a href="/login" className='block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4'>
+                        <span className='relative inline-block pl-5'>
+                            <IoPersonCircleSharp className="inline-block text-4xl" />
+                        </span>
+                    </a>
+                    <a href="/ShoppingCart" className='block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4'>
+                        <span className='relative inline-block'>
+                            <CgShoppingCart className="inline-block text-3xl" />
+                            <span style={{ fontSize: '10px' }} className='absolute bottom-5 left-6 bg-purple-800 text-white w-5 h-5 flex items-center justify-center rounded-full'>{carts?.length} </span>
+                        </span>
+                    </a>
+                </div>
 
 
             </div>

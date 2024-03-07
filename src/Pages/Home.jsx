@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -32,17 +32,6 @@ const Home = () => {
       <br />
       <Footer />
     </div>
-=======
-import React from "react";
-import Header from "../components/navbar";
-
-const Home = () => {
-  return <>
-    <Header></Header>
-    <h1 class="test-xl flex items-center justify-center">Home</h1>
-    
->>>>>>> alondraDev
-  </>
-
-}
-export default Home;
+</>
+} 
+export default Home
