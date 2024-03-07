@@ -47,19 +47,13 @@ const Login = () => {
         alt="/"
       />
       <div className="flex justify-center items-center h-full">
-<<<<<<< HEAD
-        <form onSubmit={handleSubmit} className="rounded-lg max-w-[450px]   w-full  mx-auto  bg-white  p-8  opacity-90">
-          <h1 className="text-4xl font-bold  text-gray-900 text-center py-8 ">Login</h1>
-
-=======
         <form
           onSubmit={handleSubmit}
-          className="max-w-[450px]   w-full  mx-auto  bg-white  p-8  opacity-90"
+          className="rounded-lg max-w-[450px]   w-full  mx-auto  bg-white  p-8  opacity-90"
         >
           <h1 className="text-4xl font-bold  text-gray-900 text-center py-8 ">
             Login
           </h1>
->>>>>>> evelynDev
           <div className="flex flex-col  mb-4">
             <label className="block text-5sm font-medium leading-6 text-gray-900 py-2 ">
               Correo
@@ -109,16 +103,11 @@ const Login = () => {
             Recuérdame
           </p>
           <p className="mt-10 text-center text-5sm text-gray-500">
-<<<<<<< HEAD
-            ¿No tienes una cuenta?{' '}
-            <a href="/Register" className="font-semibold leading-6 text-red-600 hover:text-orange-500">
-=======
             ¿No tienes una cuenta?{" "}
             <a
-              href="#"
+              href="/Register"
               className="font-semibold leading-6 text-red-600 hover:text-orange-500"
             >
->>>>>>> evelynDev
               Regístrate
             </a>
           </p>
