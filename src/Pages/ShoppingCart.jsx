@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import cartData from '../utils/cartData';
@@ -178,3 +179,16 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
+=======
+const shoppingCart = () => {
+  return (
+    <>
+      <h1 className="test-xl flex items-center justify-center">
+        Shopping Cart
+      </h1>
+    </>
+  );
+};
+
+export default shoppingCart;
+>>>>>>> evelynDev
