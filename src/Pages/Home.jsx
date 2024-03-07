@@ -1,5 +1,3 @@
-
-
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import CategoryCard from "../components/CategoryCard";
@@ -12,6 +10,7 @@ import CarouselDigital from "../components/Carruseles/CarruselDigital";
 import Footer from "../components/footer";
 
 const Home = () => {
+
   return <>
 
     <div style={{ backgroundColor: '#E8E8E8' }}>
@@ -34,4 +33,5 @@ const Home = () => {
     </div>
 </>
 } 
-export default Home
+
+export default Home;
