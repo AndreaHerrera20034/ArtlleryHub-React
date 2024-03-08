@@ -1,7 +1,7 @@
-import { CgShoppingCart } from "react-icons/cg";
-import { IoPersonCircleSharp } from "react-icons/io5";
+import { FaShoppingCart } from "react-icons/fa";
 import cartData from "../utils/cartData";
 import { useState } from "react";
+import ProfileMenu from "./ProfileMenu";
 
 export default function Header() {
   const [carts] = useState(cartData); // Usamos el estado local para almacenar los datos del carrito
@@ -9,9 +9,11 @@ export default function Header() {
   return (
     <nav className="flex items-center justify- flex-wrap bg-teal-500 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <a href="/">
         <span className="font-semibold text-xl tracking-tight">
           ArtlleryHub
         </span>
+        </a>
       </div>
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
@@ -52,23 +54,20 @@ export default function Header() {
           </div>
         </div>
         <div>
-          <a
-            href="/Perfil"
-            className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4"
-          >
-            <span className="relative inline-block pl-5">
-              <IoPersonCircleSharp className="inline-block text-4xl" />
+          
+            <span className="relative inline-block pl-5 ">
+            <ProfileMenu></ProfileMenu>
             </span>
-          </a>
+       
           <a
             href="/ShoppingCart"
             className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4"
           >
             <span className="relative inline-block">
-              <CgShoppingCart className="inline-block text-3xl" />
+              <FaShoppingCart className="inline-block text-3xl" />
               <span
                 style={{ fontSize: "10px" }}
-                className="absolute bottom-5 left-6 bg-purple-800 text-white w-5 h-5 flex items-center justify-center rounded-full"
+                className="absolute bottom-5 left-5 bg-purple-800 text-white w-5 h-5 flex items-center justify-center rounded-full"
               >
                 {carts?.length}{" "}
               </span>
