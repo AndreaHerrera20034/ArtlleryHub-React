@@ -1,100 +1,84 @@
-import { useRef } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import React, { useState, useEffect } from 'react';
+import { Button } from 'primereact/button';
+import { Carousel } from 'primereact/carousel';
+import { Tag } from 'primereact/tag';
+import { ProductService } from './ProductService';
+import './Style.css';
 
-const CarouselDigital = () => {
-    const items = [
+export default function CarruselDigital() {
+    const [products, setProducts] = useState([]);
+    const responsiveOptions = [
         {
-          id: 1,
-          title: 'Cuadro árbol',
-          type: 'Pintura',
-          price: '$99',
-          image: 'https://via.placeholder.com/150'
+            breakpoint: '1400px',
+            numVisible: 6, // Cantidad de cards a mostrar
+            numScroll: 1
         },
         {
-          id: 2,
-          title: 'Escultura mujer',
-          type: 'Escultura',
-          price: '$99',
-          image: 'https://via.placeholder.com/150'
+            breakpoint: '1199px',
+            numVisible: 6, // Cantidad de cards a mostrar
+            numScroll: 1
         },
         {
-          id: 3,
-          title: 'Visión futurista',
-          type: 'Arte digital',
-          price: '$99',
-          image: 'https://via.placeholder.com/150'
+            breakpoint: '767px',
+            numVisible: 6, // Cantidad de cards a mostrar
+            numScroll: 1
         },
         {
-            id: 4,
-            title: 'Visión futurista',
-            type: 'Arte digital',
-            price: '$99',
-            image: 'https://via.placeholder.com/150'
-        },
-        {
-            id: 5,
-            title: 'Visión futurista',
-            type: 'Arte digital',
-            price: '$99',
-            image: 'https://via.placeholder.com/150'
-        },
-        {
-            id: 6,
-            title: 'Visión futurista',
-            type: 'Arte digital',
-            price: '$99',
-            image: 'https://via.placeholder.com/150'
+            breakpoint: '575px',
+            numVisible: 1,
+            numScroll: 1
         }
-      ];
+    ];
 
-    const carouselRef = useRef(null);
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const [containerWidth, setContainerWidth] = useState(0);
 
-    useEffect(() => {
-        if (carouselRef.current) {
-            setContainerWidth(carouselRef.current.offsetWidth);
-        }
-    }, []);
+    const getSeverity = (product) => {
+        switch (product.inventoryStatus) {
+            case 'Pintura':
+                return 'success';
 
-    const scrollTo = (scrollOffset) => {
-        if (carouselRef.current) {
-            setScrollPosition(prevPosition => prevPosition + scrollOffset);
-            carouselRef.current.scrollLeft += scrollOffset;
+            case 'Escultura':
+                return 'warning';
+
+            case 'Arte digital':
+                return 'danger';
+
+            case 'Fotografía':
+                return 'info';
+            default:
+                return null;
         }
     };
 
-    return(
+    useEffect(() => {
+        ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 9)));
+    }, []);
+
+    const productTemplate = (product) => {
+        return (
+            <div className="flex flex-col items-center shadow rounded-2xl mx-4" style={{ backgroundColor: '#F9F7F3' }}>
+                <div className="mb-3">
+                    <img src={product.image} alt={product.name} className="w-100 rounded-md" />
+                </div>
+                <div>
+                    <h4 className="text-lg font-bold mb-2">{product.name}</h4>
+                    <h6 className="text-xl font-bold mb-3">{product.price}</h6>
+                    <Tag value={product.inventoryStatus} severity={getSeverity(product)} className={`mt-2 tag-${product.inventoryStatus.toLowerCase()}`}></Tag>
+                    <div className="mt-5 flex flex-wrap gap-2 justify-content-center">
+                        <Button label='Comprar' rounded severity="success" className='bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-xl' />
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    return (
         <div className="container rounded-3xl mx-auto px-6 py-1 md:px-1 lg:py-4 lg:px-7">
             <h5 className="text-2xl text-yellow-900 font-bold mb-5 text-left">
                 Arte Digital
             </h5>
-            <div className="flex items-center space-x-4 overflow-hidden">
-                <button className="focus:outline-none" onClick={() => scrollTo(-containerWidth)}>
-                    <AiOutlineLeft />
-                </button>
-                <div ref={carouselRef} className="flex space-x-10" style={{ scrollBehavior: 'smooth', scrollLeft: scrollPosition }}>
-                    {items.map((item) => (
-                        <div key={item.id} className="flex flex-col items-center rounded-2xl" style={{ backgroundColor: '#F9F7F3' }}>
-                            <img src={item.image} alt={item.title} className="w-40 h-40 object-cover rounded-3xl mb-4" />
-                            <p className="text-lg font-bold mb-2">{item.title}</p>
-                            <p className="text-gray-500 mb-4">{item.type}</p>
-                            <p className="text-xl font-bold mb-4">{item.price}</p>
-                            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-xl">
-                                Comprar
-                            </button>
-                        </div>
-                    ))}
-                </div>
-                <button className="focus:outline-none" onClick={() => scrollTo(containerWidth)}>
-                    <AiOutlineRight />
-                </button>
+            <div className="card">
+                <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} />
             </div>
         </div>
-    );
-
+    )
 }
-
-export  default CarouselDigital; 

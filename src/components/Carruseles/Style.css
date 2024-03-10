@@ -1,0 +1,56 @@
+:root {
+    /* PALETA DE COLORES CSS */
+
+/* CSS HEX */
+--night: #0B090Cff;
+--amaranth: #E01A4Fff;
+--tomato: #F15846ff;
+--mikado-yellow: #FAC22Fff;
+--moonstone: #53B3CBff;
+--imagen-hero-section: #f6e5c7;
+--azul-pintura: #53B3CB;
+--text-color: #F9F7F3;
+--morado-escultura: #685376;
+--rosado-artedigital: #E01A4F;
+--naranja-fotografia: #F15846;
+--body: #E8E8E8;
+
+
+/* CSS HSL */
+--night: hsla(280, 14%, 4%, 1);
+--amaranth: hsla(344, 79%, 49%, 1);
+--tomato: hsla(6, 86%, 61%, 1);
+--mikado-yellow: hsla(43, 95%, 58%, 1);
+--moonstone: hsla(192, 54%, 56%, 1);
+}
+
+/* Para el estado 'Pintura' */
+.tag-pintura {
+    background-color: #53B3CB;
+    width: 55px;
+    border-radius: 0.25rem; /* 4px */
+    color: #F9F7F3; /* Texto en blanco */
+}
+
+/* Para el estado 'Escultura' */
+.tag-escultura {
+    background-color: #685376;
+    width: 69px;
+    border-radius: 0.25rem; /* 4px */
+    color: #F9F7F3; /* Texto en negro */
+}
+
+/* Para el estado 'Arte digital' */
+.tag-artedigital {
+    background-color: #E01A4F;
+    width: 79px;
+    border-radius: 0.25rem; /* 4px */
+    color: #F9F7F3; /* Texto en blanco */
+}
+
+.tag-fotografía {
+    background-color: #F15846;
+    width: 78px;
+    border-radius: 0.25rem; /* 4px */
+    color: #F9F7F3;
+}
