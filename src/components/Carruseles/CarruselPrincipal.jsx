@@ -9,6 +9,8 @@ import './Style.css';
 
 export default function CarruselPrincipal() {
     const [products, setProducts] = useState([]);
+    const [selectedProduct, setSelectedProduct] = useState(null); // Estado para almacenar el producto seleccionado
+    const [showModal, setShowModal] = useState(false); // Estado para controlar la visualización del modal
     const responsiveOptions = [
         {
             breakpoint: '1400px',
@@ -55,6 +57,11 @@ export default function CarruselPrincipal() {
         ProductService.getProductsSmall().then((data) => setProducts(data.slice(0, 9)));
     }, []);
 
+    const handleBuyClick = (product) => {
+        setSelectedProduct(product); // Almacenar el producto seleccionado en el estado
+        setShowModal(true); // Mostrar el modal al hacer clic en "Comprar"
+    };
+
     const productTemplate = (product) => {
         return (
             <div className="flex flex-col items-center shadow rounded-2xl mx-4" style={{ backgroundColor: '#F9F7F3' }}>
@@ -66,7 +73,7 @@ export default function CarruselPrincipal() {
                     <h6 className="text-xl font-bold mb-3">{product.price}</h6>
                     <Tag value={product.inventoryStatus} severity={getSeverity(product)} className={`mt-2 tag-${product.inventoryStatus.toLowerCase()}`}></Tag>
                     <div className="mt-5 flex flex-wrap gap-2 justify-content-center">
-                        <Button label='Comprar' rounded severity="success" className='bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-xl' />
+                        <Button label='Comprar' rounded severity="success" className='bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-xl' onClick={() => handleBuyClick(product)} />
                     </div>
                 </div>
             </div>
@@ -81,7 +88,35 @@ export default function CarruselPrincipal() {
             <div className="card">
                 <Carousel value={products} numVisible={3} numScroll={3} responsiveOptions={responsiveOptions} itemTemplate={productTemplate} />
             </div>
+            {/* Modal */}
+            {showModal && selectedProduct && (
+                <div className="flex fixed top-0 right-0 bottom-0 left-0 z-50 items-center justify-center bg-gray-900 bg-opacity-50">
+                    <div className="relative bg-white rounded-lg shadow-lg">
+                        <div className="w-1/2 p-4 md:p-5">
+                            <img src={selectedProduct.image} alt={selectedProduct.name} className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-lg" />
+                        </div>
+                        {/* Contenido del modal */}
+                        <div className="flex flex-col justify-between p-4 leading-normal w-full md:w-1/2">
+                            <h3 className="text-xl font-semibold text-gray-900">{selectedProduct.name}</h3>
+                            {/* Mostrar detalles del producto seleccionado aquí */}
+                            <p>Creador: {selectedProduct.user}</p>
+                            <p>Descripción: {selectedProduct.description}</p>
+                            <p>Precio: {selectedProduct.price}</p>
+                        </div>
+                        <div className="flex items-center justify-end p-4 md:p-5 bg-gray-100">
+                            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" onClick={() => setShowModal(false)}>Cerrar</button>
+                        </div>
+                        {/* Botón de cierre del modal */}
+                        <button type="button" className="absolute top-0 right-0 mt-4 mr-4 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-400 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-400 dark:hover:text-white" data-modal-hide="static-modal" onClick={() => setShowModal(false)}>
+                            <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span className="sr-only">Cerrar modal</span>
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
-        
+
     )
 }
