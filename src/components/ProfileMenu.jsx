@@ -14,7 +14,7 @@ export default function ProfileMenu() {
     {
       label: "Sign Out",
       icon: IoMdPower,
-      link: "/Login"
+      link: "/Login",
     },
   ];
 
@@ -40,9 +40,9 @@ export default function ProfileMenu() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={toggleMenu}
-        className=" items-center gap-1 rounded-full  text-blueGray"
+        className=" items-center gap-1 rounded-full  text-white"
       >
-        <IoPersonCircleSharp className="block mt-4 lg:inline-block lg:mt-0 text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4 text-4xl"></IoPersonCircleSharp>
+        <IoPersonCircleSharp className="block mt-4 lg:inline-block lg:mt-0 hover:text-neutral-700 focus:text-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 mr-4 text-4xl"></IoPersonCircleSharp>
       </button>
       {isMenuOpen && (
         <div className="absolute top-10 right-0 z-10 w-48 mt-2 bg-white rounded shadow-md">
