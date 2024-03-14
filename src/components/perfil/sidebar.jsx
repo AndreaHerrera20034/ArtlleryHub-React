@@ -1,5 +1,5 @@
 import Hero from "./hero";
-import Portafolio from "./portafolio";
+import OtroPor from "./otroport";
 
 const sidebar = () => {
   return (
@@ -174,7 +174,8 @@ const sidebar = () => {
 
       <div className="p-4 sm:ml-64">
         <Hero />
-        <Portafolio />
+
+        <OtroPor />
       </div>
     </>
   );
