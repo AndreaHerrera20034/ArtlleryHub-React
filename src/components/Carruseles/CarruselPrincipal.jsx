@@ -6,6 +6,7 @@ import { Tag } from 'primereact/tag';
 //import { ProductService } from './service/ProductService';
 import { ProductService } from './ProductService';
 import './Style.css';
+import FavoriteButton from './FavoriteButton';
 
 export default function CarruselPrincipal() {
     const [products, setProducts] = useState([]);
@@ -91,23 +92,24 @@ export default function CarruselPrincipal() {
             {/* Modal */}
             {showModal && selectedProduct && (
                 <div className="flex fixed top-0 right-0 bottom-0 left-0 z-50 items-center justify-center bg-gray-900 bg-opacity-50">
-                    <div className="relative bg-white rounded-lg shadow-lg flex w-full md:max-w-lg">
+                    <div className="relative bg-white rounded-lg shadow-lg flex w-full md:max-w-3xl">
                         {/* Imagen */}
                         <div className="w-1/2 p-4 md:p-5">
-                            <img src={selectedProduct.image} alt={selectedProduct.name} className="object-cover w-full rounded-2xl h-96 md:h-auto md:w-full " />
+                            <img src={selectedProduct.image} alt={selectedProduct.name} className="object-cover w-64 h-64 md:h-auto md:w-full rounded-2xl" />
                         </div>
                         {/* Contenido del modal */}
                         <div className="flex flex-col justify-between p-4 leading-normal w-1/2">
-                            <h3 className="text-xl font-semibold text-gray-900">{selectedProduct.name}</h3>
-                            {/* Mostrar detalles del producto seleccionado aquí */}
-                            <div>
+                            <div className='py-8'>
+                                <h3 className="text-xl font-semibold text-gray-900">{selectedProduct.name}</h3>
+                                {/* Mostrar detalles del producto seleccionado aquí */}
                                 <p className="mb-2">Creador: {selectedProduct.user}</p>
                                 <p className="mb-2">Descripción: {selectedProduct.description}</p>
                                 <p className="mb-2">Precio: {selectedProduct.price}</p>
                             </div>
                             {/* Botón de cerrar modal */}
-                            <div className="flex justify-end">
-                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5" onClick={() => setShowModal(false)}>Cerrar</button>
+                            <div className="flex justify-evenly">
+                                <button className="text-black bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-2xl text-sm px-5 py-2.5" onClick={() => setShowModal(false)}>Comprar</button>
+                                <FavoriteButton />
                             </div>
                         </div>
                         {/* Botón de cierre del modal */}
