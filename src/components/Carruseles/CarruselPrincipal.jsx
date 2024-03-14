@@ -94,7 +94,7 @@ export default function CarruselPrincipal() {
                     <div className="relative bg-white rounded-lg shadow-lg flex w-full md:max-w-lg">
                         {/* Imagen */}
                         <div className="w-1/2 p-4 md:p-5">
-                            <img src={selectedProduct.image} alt={selectedProduct.name} className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-full md:rounded-l-lg" />
+                            <img src={selectedProduct.image} alt={selectedProduct.name} className="object-cover w-full rounded-2xl h-96 md:h-auto md:w-full " />
                         </div>
                         {/* Contenido del modal */}
                         <div className="flex flex-col justify-between p-4 leading-normal w-1/2">
