@@ -1,5 +1,5 @@
 //import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'primereact/button';
 import { Carousel } from 'primereact/carousel';
 import { Tag } from 'primereact/tag';

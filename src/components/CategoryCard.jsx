@@ -3,7 +3,7 @@ export default function CategoryCard() {
     <div className="py-6" style={{ backgroundColor: "#F9F7F3" }}>
       <h2 className="text-center text-2xl font-bold mb-5">Category</h2>
 
-<<<<<<< HEAD
+
       <div className="flex justify-center space-x-6">
         {/* card 1 */}
         <div
@@ -18,7 +18,6 @@ export default function CategoryCard() {
           <div className="px-8 py-4">
             <div className="font-bold text-xl mb-2">Pinturas</div>
           </div>
-=======
             <div className="flex justify-center space-x-6">
                 {/* card 1 */}
                 <div className="max-w-xl rounded-xl shadow-lg" style={{backgroundColor: '#82CDDE'}}>
@@ -49,7 +48,6 @@ export default function CategoryCard() {
                     </div>
                 </div>
             </div>
->>>>>>> andreaDev
         </div>
 
         <div
