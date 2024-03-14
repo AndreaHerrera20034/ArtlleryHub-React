@@ -13,6 +13,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+<<<<<<< HEAD
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Register" element={<Register />}></Route>
@@ -26,6 +27,13 @@ function App() {
           <Route path="/ShoppingCart" element={<ShoppingCart />}></Route>
           <Route path="/HomeAdmin" element={<HomeAdmin />}></Route>
           <Route path="/Perfil" element={<Perfil />}></Route>
+=======
+          <Route path='/' element={<Home />}></Route> 
+          <Route path='/Home' element={<Home />}></Route>
+          <Route path='/Register' element={<Register />}></Route>
+          <Route path='/ShoppingCart' element={<ShoppingCart />}></Route>
+          <Route path='/HomeAdmin' element={<HomeAdmin />}></Route>
+>>>>>>> andreaDev
         </Routes>
       </BrowserRouter>
     </>
