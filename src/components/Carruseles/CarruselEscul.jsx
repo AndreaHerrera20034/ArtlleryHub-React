@@ -66,8 +66,8 @@ export default function CarruselPrincipal() {
     const productTemplate = (product) => {
         return (
             <div className="flex flex-col items-center shadow rounded-2xl mx-4" style={{ backgroundColor: '#F9F7F3' }}>
-                <div className="mb-3">
-                    <img src={product.image} alt={product.name} className="w-100 rounded-md" />
+                <div className="mb-3 pt-2">
+                    <img src={product.image} alt={product.name} className="w-100 rounded-xl" />
                 </div>
                 <div>
                     <h4 className="text-lg font-bold mb-2">{product.name}</h4>
