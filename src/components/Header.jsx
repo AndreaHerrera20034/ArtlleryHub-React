@@ -1,6 +1,16 @@
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { isLoggedIn, logout } from './auth';
 
 export default function Header() {
+
+    const [loggedIn, setLoggedIn] = useState(isLoggedIn());
+
+    const handleLogout = () => {
+        logout();
+        setLoggedIn(false);
+    };
+
     return (
         <nav className="flex items-center justify- flex-wrap bg-teal-500 p-6 ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -26,17 +36,22 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <a href="/Login">
-                    <button className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Login</button>
-                </a>
-                <a href="/Register">
-                    <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
-                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-teal-500 rounded-md group-hover:bg-opacity-0">
-                            Sign In
-                        </span>
-                    </button>
-                </a>
-                
+                {loggedIn ? (
+                    <button onClick={handleLogout} className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Cerrar sesión</button>
+                ) : (
+                    <>
+                        <a href="/Login">
+                            <button className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Login</button>
+                        </a>
+                        <a href="/Register">
+                            <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
+                                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-teal-500 rounded-md group-hover:bg-opacity-0">
+                                    Sign In
+                                </span>
+                            </button>
+                        </a>
+                    </>
+                )}
             </div>
         </nav>
     );
