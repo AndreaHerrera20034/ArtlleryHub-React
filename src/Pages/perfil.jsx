@@ -1,6 +1,7 @@
-import Hero from "../components/perfil/hero";
-import Portafolio from "../components/perfil/portafolio";
 import Navbar from "../components/navbar";
+
+import Sidebar from "../components/perfil/sidebar";
+
 import "./perfil.css";
 
 const perfil = () => {
@@ -8,8 +9,7 @@ const perfil = () => {
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Portafolio />
+        <Sidebar />
       </main>
     </>
   );
