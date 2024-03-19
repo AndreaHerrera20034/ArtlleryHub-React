@@ -52,7 +52,7 @@ const hero = () => {
             <figure className="flex items-center justify-center">
               <img
                 className="rounded w-36 h-36"
-                src="https://www.freeiconspng.com/thumbs/pikachu-transparent/pikachu-png-transparent-0.png"
+                src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg"
                 alt="Extra large avatar"
               />
             </figure>
