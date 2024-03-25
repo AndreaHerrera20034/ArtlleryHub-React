@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
+import Hero from "../components/perfil/hero";
+import OtroPor from "../components/perfil/otroport";
 
-import Sidebar from "../components/perfil/sidebar";
 
 import "./perfil.css";
 
@@ -8,9 +9,11 @@ const perfil = () => {
   return (
     <>
       <Navbar />
-      <main>
-        <Sidebar />
-      </main>
+      <div className="p-4 sm:ml-64">
+        <Hero />
+
+        <OtroPor />
+      </div>
     </>
   );
 };

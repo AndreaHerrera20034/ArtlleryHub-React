@@ -21,8 +21,6 @@ export default function Header() {
                         ArtlleryHub
                     </span>
 
-                    <span className="font-semibold text-xl tracking-tight">ArtlleryHub</span>
-
                 </a>
             </div>
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
