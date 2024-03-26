@@ -80,7 +80,7 @@ const Sell = () => {
     <>
       <Header></Header>
       <div className="relative min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center">
-        <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+        <div className="absolute bg-white opacity-70 inset-0 z-0"></div>
         <div className="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
           <div className="text-center">
             <h2 className="mt-5 text-3xl font-bold text-gray-900">
@@ -144,7 +144,7 @@ const Sell = () => {
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                 </svg>
                 <p className="mb-2 text-sm text-gray-400 dark:text-gray-300"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                <p className="text-xs text-gray-400 dark:text-gray-300">PNG or JPG (MAX. 800x400px)</p>
+                <p className="text-xs text-gray-400 dark:text-gray-300">PNG or JPG or GIF (MAX. 800x400px)</p>
               </div>
               <input id="dropzone-file" type="file" className="hidden" />
             </label>
