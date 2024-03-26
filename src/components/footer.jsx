@@ -112,16 +112,12 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <p className="font-medium">Home</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                <a className="hover:opacity-75" href></a>
-                <a className="hover:opacity-75" href></a>
-                <a className="hover:opacity-75" href></a>
-                <a className="hover:opacity-75" href></a>
-              </nav>
+              <a href="/">
+                <p className="font-medium">Inicio</p>
+              </a>
             </div>
             <div>
-              <p className="font-medium">Category</p>
+              <p className="font-medium">Categorías</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <a className="hover:opacity-75" href>
                   {" "}
@@ -142,7 +138,7 @@ const Footer = () => {
               </nav>
             </div>
             <div>
-              <p className="font-medium">About</p>
+              <p className="font-medium">Acercda de</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <a className="hover:opacity-75" href></a>
                 <a className="hover:opacity-75" href></a>

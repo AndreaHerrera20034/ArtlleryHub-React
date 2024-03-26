@@ -36,16 +36,16 @@ const Sell = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     setLoading(true);
-  
+
     const formData = new FormData();
     formData.append("productName", productName);
     formData.append("description", description);
     formData.append("price", price);
     formData.append("category", category);
     formData.append("image", image);
-  
+
     try {
       const response = await axios.post(
         "http://localhost:3001/api/post/postArt/1",
@@ -56,15 +56,15 @@ const Sell = () => {
           },
         }
       );
-  
+
       console.log("Respuesta del servidor:", response.data);
-  
+
       setProductName("");
       setDescription("");
       setPrice("");
       setCategory("");
       setImage(null);
-  
+
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
@@ -74,137 +74,83 @@ const Sell = () => {
     } finally {
       setLoading(false);
     }
-  }; 
+  };
 
   return (
     <>
       <Header></Header>
-      <div style={{ paddingTop: "20px", paddingBottom: "60px" }}>
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-md mx-auto mt-8 p-8 bg-gray-100 rounded-lg"
-        >
-          <div className="mb-4">
-            <label
-              htmlFor="product-name"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Nombre del producto:
-            </label>
-            <input
-              id="product-name"
-              type="text"
-              value={productName}
-              onChange={handleProductNameChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
+      <div className="relative min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center">
+        <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+        <div className="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+          <div className="text-center">
+            <h2 className="mt-5 text-3xl font-bold text-gray-900">
+              Venta
+            </h2>
+            <p className="mt-2 text-sm text-gray-400">
+              Hola, cuéntanos ¿qué vas a vender?
+            </p>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="description"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Descripción:
-            </label>
-            <textarea
-              id="description"
-              value={description}
-              onChange={handleDescriptionChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
+          <div className="flex flex-col justify-between">
+            <form className="mt-8 space-y-3">
+              <div className="grid grid-cols-1 space-y-2">
+                <label className="text-sm font-bold text-gray-500 tracking-wide">Nombre del producto:</label>
+                <input className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"></input>
+              </div>
+
+              <div className="grid grid-cols-1 space-y-2">
+                <label className="text-sm font-bold text-gray-500 tracking-wide">Descripción:</label>
+                <textarea id="message" rows="4" className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"></textarea>
+              </div>
+
+              <div className="grid grid-cols-1 space-y-2">
+                <label className="text-sm font-bold text-gray-500 tracking-wide">Precio:</label>
+                <input className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"></input>
+              </div>
+
+              <div className="grid grid-cols-1 space-y-2">
+                <label className="text-sm font-bold text-gray-500 tracking-wide">Categoría:</label>
+                <select className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500">
+                  <option value="">Pintura</option>
+                  <option value="">Arte Digital</option>
+                  <option value="">Escultura</option>
+                  <option value="">Fotografía</option>
+                </select>
+              </div>
+
+              <div className="grid grid-cols-1 space-y-2">
+                <label className="text-sm font-bold text-gray-500 tracking-wide">Cantidad:</label>
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  className="w-20 text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
+                />
+              </div>
+
+              <div>
+                <button type="submit" className="my-5 w-50 flex justify-center bg-blue-500 text-gray-100 p-4  rounded-lg tracking-wide
+                                    font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
+                  Guardar
+                </button>
+              </div>
+            </form>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="price"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Precio:
-            </label>
-            <input
-              id="price"
-              type="number"
-              value={price}
-              onChange={handlePriceChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="price"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Categoria:
-            </label>
-            <select
-              id="category"
-              value={category}
-              onChange={handleCategoryChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required>
-              <option value="" disabled>Seleccione una...</option>
-              <option>Pinturas</option>
-              <option>Escultura</option>
-              <option>Arte Digital</option>
-              <option>Fotografía</option>
-            </select>
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="image"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Imagen:
-            </label>
-            <input
-              id="image"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              ref={fileInputRef} // Asignamos la referencia al input de tipo file
-              className="appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
-          <div style={{ justifyContent: "center", display: "flex" }}>
-            {/* Botón de Guardar */}
-            {loading ? ( // Si loading es true, mostrar el botón de carga
-              <button
-                disabled
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
-              >
-                <svg
-                  aria-hidden="true"
-                  role="status"
-                  className="inline w-4 h-4 me-3 text-white animate-spin"
-                  viewBox="0 0 100 101"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                    fill="#E5E7EB"
-                  />
-                  <path
-                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                    fill="currentColor"
-                  />
+
+
+          <div className="mt-8 space-y-3 flex items-end justify-end w-full">
+            <label for="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 bg-white hover:bg-gray-100 bg-gray-500 dark:hover:border-gray-100 dark:hover:bg-gray-400">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg className="w-8 h-8 mb-4 text-gray-300 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                 </svg>
-                Loading...
-              </button>
-            ) : ( // Si loading es false, mostrar el botón Guardar
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Guardar
-              </button>
-            )}
+                <p className="mb-2 text-sm text-gray-400 dark:text-gray-300"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                <p className="text-xs text-gray-400 dark:text-gray-300">PNG or JPG (MAX. 800x400px)</p>
+              </div>
+              <input id="dropzone-file" type="file" className="hidden" />
+            </label>
           </div>
-        </form>
+
+        </div>
       </div>
       <Footer></Footer>
     </>

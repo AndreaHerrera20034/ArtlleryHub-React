@@ -15,17 +15,17 @@ export default function CarruselPrincipal() {
     const responsiveOptions = [
         {
             breakpoint: '1400px',
-            numVisible: 6, // Cantidad de cards a mostrar
+            numVisible: 5, // Cantidad de cards a mostrar
             numScroll: 1
         },
         {
             breakpoint: '1199px',
-            numVisible: 6, // Cantidad de cards a mostrar
+            numVisible: 4, // Cantidad de cards a mostrar
             numScroll: 1
         },
         {
             breakpoint: '767px',
-            numVisible: 6, // Cantidad de cards a mostrar
+            numVisible: 3, // Cantidad de cards a mostrar
             numScroll: 1
         },
         {

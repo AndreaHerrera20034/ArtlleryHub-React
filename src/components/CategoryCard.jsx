@@ -2,7 +2,7 @@ import React from "react";
 export default function CategoryCard(){
     return(
         <div className="py-6" style={{backgroundColor: '#F9F7F3'}}>
-            <h2 className="text-center text-2xl font-bold mb-5">Category</h2>
+            <h2 className="text-center text-2xl font-bold mb-5">Categorías</h2>
 
             <div className="flex justify-center space-x-6">
                 {/* card 1 */}

@@ -8,7 +8,7 @@ const Card = () => {
         <div className="flex flex-col lg:flex-row items-start">
           <div className="p-6 lg:w-1/2 lg:px-8 lg:py-12">
             <h2 className="text-2xl font-bold mb-4">
-              Discover the art of your choice!
+              ¡Descubra el arte que prefiera!
             </h2>
             <p className="text-gray-500 mb-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro,

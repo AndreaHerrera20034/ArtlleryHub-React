@@ -5,7 +5,7 @@ export default function HeroSection() {
         <div className="flex items-center flex-wrap px-2">
           <div className="relative lg:w-6/12 lg:py-10">
             <h1 className="font-bold text-4xl text-yellow-900 md:text-5xl lg:w-10/12">
-              Diverse Art World
+            El mundo del arte diverso
             </h1>
             <p className="mt-8 text-gray-700 lg:w-10/12">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur
