@@ -4,75 +4,20 @@ import Footer from "../components/footer";
 import axios from "axios";
 
 const Sell = () => {
-  const [productName, setProductName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState(null);
-  const [loading, setLoading] = useState(false); // Estado para controlar la carga
 
-  const fileInputRef = useRef(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleProductNameChange = (e) => {
-    setProductName(e.target.value);
-  };
-
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
-  };
-
-  const handlePriceChange = (e) => {
-    setPrice(e.target.value);
-  };
-
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setLoading(true);
-
-    const formData = new FormData();
-    formData.append("productName", productName);
-    formData.append("description", description);
-    formData.append("price", price);
-    formData.append("category", category);
-    formData.append("image", image);
-
-    try {
-      const response = await axios.post(
-        "http://localhost:3001/api/post/postArt/1",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
-      console.log("Respuesta del servidor:", response.data);
-
-      setProductName("");
-      setDescription("");
-      setPrice("");
-      setCategory("");
-      setImage(null);
-
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
-    } catch (error) {
-      console.error("Error al enviar los datos:", error);
-      // Aquí puedes agregar lógica adicional para manejar el error, como mostrar un mensaje al usuario
-    } finally {
-      setLoading(false);
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setSelectedFile({
+          preview: reader.result,
+          name: file.name,
+        });
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -136,20 +81,59 @@ const Sell = () => {
             </form>
           </div>
 
-
-          <div className="mt-8 space-y-3 flex items-end justify-end w-full">
-            <label for="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 bg-white hover:bg-gray-100 bg-gray-500 dark:hover:border-gray-100 dark:hover:bg-gray-400">
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg className="w-8 h-8 mb-4 text-gray-300 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                </svg>
-                <p className="mb-2 text-sm text-gray-400 dark:text-gray-300"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                <p className="text-xs text-gray-400 dark:text-gray-300">PNG or JPG or GIF (MAX. 800x400px)</p>
-              </div>
-              <input id="dropzone-file" type="file" className="hidden" />
+          {/* Input de subida de imagen */}
+          <div className="flex items-center justify-center w-80">
+            <label
+              htmlFor="dropzone-file"
+              className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-200 hover:bg-gray-100 dark:border-gray-500 dark:hover:border-gray-400 dark:hover:bg-gray-300"
+            >
+              {selectedFile ? (
+                <div>
+                  <img
+                    src={selectedFile.preview}
+                    alt="Selected file"
+                    className="w-48 h-48 object-cover mb-4"
+                  />
+                  <p className="mb-2 text-sm text-gray-700 dark:text-gray-400">
+                    {selectedFile.name}
+                  </p>
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                  <svg
+                    className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 16"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                    />
+                  </svg>
+                  <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Click to upload</span> or drag
+                    and drop
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    SVG, PNG, JPG or GIF (MAX. 800x400px)
+                  </p>
+                </div>
+              )}
+              <input
+                id="dropzone-file"
+                type="file"
+                className="hidden"
+                onChange={handleFileChange}
+              />
             </label>
           </div>
 
+          
         </div>
       </div>
       <Footer></Footer>
