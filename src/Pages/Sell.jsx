@@ -1,7 +1,6 @@
-import { useState, useRef } from "react";
+import { useState} from "react";
 import Header from "../components/navbar";
 import Footer from "../components/footer";
-import axios from "axios";
 
 const Sell = () => {
 
@@ -92,7 +91,7 @@ const Sell = () => {
                   <img
                     src={selectedFile.preview}
                     alt="Selected file"
-                    className="w-48 h-48 object-cover mb-4"
+                    className="w-48 h-48 object-cover rounded-lg mb-4"
                   />
                   <p className="mb-2 text-sm text-gray-700 dark:text-gray-400">
                     {selectedFile.name}
@@ -133,7 +132,7 @@ const Sell = () => {
             </label>
           </div>
 
-          
+
         </div>
       </div>
       <Footer></Footer>
